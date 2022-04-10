@@ -1,8 +1,14 @@
 $("#submit").click(function (event) {
     event.preventDefault();
-    let date = $("#date").val();
-    buscarInfos(RasultadoDate);
+    let ResultadoDate = $("#date").val();
+    buscarInfos(ResultadoDate);
   });
-  function buscarInfos(RasultadoDate){
-    
+  function buscarInfos(ResultadoDate){
+    $.ajax({
+        url: `https://api.nasa.gov/planetary/apod?api_key=tS9F0K3v4W97bNw4yVK2ecVMogviTIwmshqXbaU9&date=${ResultadoDate}`,
+        success: function (resposta) {
+          $("#mostra-title").text(resposta.title);
+          $("#mostra-foto").attr("src", resposta.url);
+        },
+      });
   }
