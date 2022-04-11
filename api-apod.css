@@ -5,3 +5,16 @@ body{
     background-repeat: no-repeat;
       
 }
+
+h2 {
+    color: white;
+    text-align: center;
+}
+
+label{
+    color: white;
+    text-align: center;
+}
+.centralizar{
+    text-align: center;
+}
